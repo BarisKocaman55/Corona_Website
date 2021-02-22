@@ -1,0 +1,113 @@
+﻿@using Corono_Website.Models
+@model CoronaTable
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CoronaTableEdit</title>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/myCss.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" id="title">
+                <h2 class="h2_title">Korono Virüs Takip Sitesi</h2>
+            </div>
+        </div>
+    </div>
+
+
+    <form method="post">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8" style="background-color:#e6e6ff; margin-left: 17%; border-radius: 15px; margin-top: 40px;">
+                    <div class="col-md-8" style="margin-left: 24%; margin-top: 20px; margin-bottom: 10px; background-color: white; text-align: center; border-radius: 15px; ">
+                        <h2>Bilgi Ekleme</h2>
+                        <hr style="color: black;" />
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <label class="col-2 col-form-label">Tarih</label>
+                        @*<input class="form-control" type="date" value="2011-08-19" id="example-date-input">*@
+                        @Html.TextBoxFor(x => x.Date, "{0:dd-mm-yyyy}", new { @class = "form-control", @id = "date", type = "date" })
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <label class="col-2 col-form-label" id="NumOfTest">Test Sayısı</label>
+                        @*<input type="number" class="form-control" placeholder="Test Sayısını Giriniz..." aria-label="Username" aria-describedby="NumOfTest">*@
+                        @Html.TextBoxFor(x => x.NumOfTest, new { @class = "form-control", type = "number", placeholder = "Test Sayısını Giriniz...", aria_describedby = "NumOfTest" })
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <label class="col-2 col-form-label" id="NumOfCase">Vaka Sayısı</label>
+                        @*<input type="number" class="form-control" placeholder="Vaka Sayısını Giriniz..." aria-label="Username" aria-describedby="NumOfCase">*@
+                        @Html.TextBoxFor(x => x.NumOfCase, new { @class = "form-control", type = "number", placeholder = "Vaka Sayısını Giriniz...", aria_describedby = "NumOfCase" })
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <label class="col-2 col-form-label" id="NumOfPatients">Hasta Sayısı</label>
+                        @*<input type="number" class="form-control" placeholder="Hasta Sayısını Giriniz..." aria-label="Username" aria-describedby="NumOfPatients">*@
+                        @Html.TextBoxFor(x => x.NumOfPatients, new { @class = "form-control", type = "number", placeholder = "Hasta Sayısını Giriniz...", aria_describedby = "NumOfPatients" })
+
+                    </div>
+
+                    <div class="input-group mb-3">
+                        @*<span class="input-group-text" id="NumOfDeaths">Vefat Sayısı</span>*@
+                        <label class="col-2 col-form-label" id="NumOfDeaths">Vefat Sayısı</label>
+                        @*<input type="number" class="form-control" placeholder="Vefat Sayısını Giriniz..." aria-label="Username" aria-describedby="NumOfDeaths">*@
+                        @Html.TextBoxFor(x => x.NumOfDeaths, new { @class = "form-control", type = "number", placeholder = "Vefat Sayısını Giriniz...", aria_describedby = "NumOfDeaths" })
+
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <label class="col-2 col-form-label" id="NumOfHealed">İyileşen Sayısı</label>
+                        @*<input type="number" class="form-control" placeholder="İyileşen Sayısını Giriniz..." aria-label="Username" aria-describedby="NumOfHealed">*@
+                        @Html.TextBoxFor(x => x.NumOfHealed, new { @class = "form-control", type = "number", placeholder = "İyileşen Sayısını Giriniz...", aria_describedby = "NumOfHealed" })
+
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <label class="col-2 col-form-label" id="NumOfIntensiveCare">Ağır Hasta Sayısı</label>
+                        @*<input type="number" class="form-control" placeholder="Ağır Hasta Sayısını Giriniz..." aria-label="Username" aria-describedby="NumOfHealed">*@
+                        @Html.TextBoxFor(x => x.NumOfIntensiveCare, new { @class = "form-control", type = "number", placeholder = "Ağır Hasta Sayısını Giriniz...", aria_describedby = "NumOfIntensiveCare" })
+
+                    </div>
+
+                    <div class="input-group">
+                        <input type="submit" value="Kaydet" class="btn btn-success btn-lg" style="margin-left: 50%; margin-bottom: 10px;" />
+                    </div>
+
+                    <div class="input-group" style="margin-left: 49%; margin-top: 5px; margin-bottom: 30px;">
+                        <a class="list-group-item list-group-item-warning" href="/Admin/CoronaTableList">Bilgileri Listele</a>
+                    </div>
+
+                    <div class="input-group" style="margin-left: 45%;">
+                        @if (ViewBag.Result != null)
+                        {
+                            <div class="alert alert-@ViewBag.Status" role="alert">
+                                @ViewBag.Result
+                            </div>
+                        }
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</body>
+</html>

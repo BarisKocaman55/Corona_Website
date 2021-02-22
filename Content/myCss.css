@@ -1,0 +1,29 @@
+﻿body {
+    background: linear-gradient(to right, #00AAFF, #00FF6C);
+}
+
+#title {
+    height: 80px;
+    background-color: #e6e6ff;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.h2_title {
+    padding-top: 20px;
+    font-family: "Times New Roman";
+}
+
+#date {
+    height: 40px;
+}
+
+.actionlink1 {
+    padding-top: 20px;
+    padding-left: 100px;
+}
+
+.actionlink2 {
+    padding-top: 20px;
+    padding-left: 120px;
+}

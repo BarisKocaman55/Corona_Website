@@ -1,0 +1,42 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HomePage</title>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/myCss.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" id="title">
+                <h2 class="h2_title">Korono Virüs Takip Sitesi</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4" style="margin-left: 220px; margin-top:120px; background-color: #ccffcc; height: 200px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bar-chart-line-fill" style="width: 60px; height:60px; margin-left: 140px; margin-top: 30px;" viewBox="0 0 16 16">
+                    <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2z" />
+                </svg> <br /> <br />
+                @Html.ActionLink("Üye Olmadan Devam Et", "LoginPage", "Home", new { @class = "actionlink1" })
+            </div>
+
+            <div class="col-md-4" style="background-color:#ccb3ff; margin-top:120px; height:200px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" style="height:60px; width:60px; margin-left: 140px; margin-top: 30px;" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                </svg> <br/> <br />
+                @Html.ActionLink("Üye Girişi Yap", "LoginPage", "Home", new { @class = "actionlink2"})
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

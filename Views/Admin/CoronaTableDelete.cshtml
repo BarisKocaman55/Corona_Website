@@ -1,0 +1,96 @@
+﻿@using Corono_Website.Models
+@model CoronaTable
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CoronaTableDelete</title>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/myCss.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" id="title">
+                <h2 class="h2_title">Korono Virüs Takip Sitesi</h2>
+            </div>
+        </div>
+    </div>
+
+
+    <form method="post">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8" style="background-color:#e6e6ff; margin-left: 17%; border-radius: 15px; margin-top: 40px;">
+                    <div class="col-md-8" style="margin-left: 20%; margin-top: 20px; margin-bottom: 10px; background-color: white; text-align: center; border-radius: 15px; ">
+                        <h2>Bilgi Silme</h2>
+                        <hr style="color: black;" />
+                    </div>
+
+                    <div class="input-group mb-3" style="margin-left: 38%;">
+                        <label class="col-2 col-form-label">Tarih</label>
+                        @Html.DisplayFor(x => x.Date, new { @class = "form-control", @id = "date"})
+                    </div>
+
+                    <div class="input-group mb-3" style="margin-left: 38%;">
+                        <label class="col-2 col-form-label" id="NumOfTest">Test Sayısı</label>
+                        @Html.DisplayFor(x => x.NumOfTest, new { @class = "form-control"})
+                    </div>
+
+                    <div class="input-group mb-3" style="margin-left: 38%;">
+                        <label class="col-2 col-form-label" id="NumOfCase">Vaka Sayısı</label>
+                        @Html.DisplayFor(x => x.NumOfCase, new { @class = "form-control" })
+                    </div>
+
+                    <div class="input-group mb-3" style="margin-left: 38%;">
+                        <label class="col-2 col-form-label" id="NumOfPatients">Hasta Sayısı</label>
+                        @Html.DisplayFor(x => x.NumOfPatients, new { @class = "form-control" })
+                    </div>
+
+                    <div class="input-group mb-3" style="margin-left: 38%;">
+                        <label class="col-2 col-form-label" id="NumOfDeaths">Vefat Sayısı</label>
+                        @Html.DisplayFor(x => x.NumOfDeaths, new { @class = "form-control" })
+                    </div>
+
+                    <div class="input-group mb-3" style="margin-left: 38%;">
+                        <label class="col-2 col-form-label" id="NumOfHealed">İyileşen Sayısı</label>
+                        @Html.DisplayFor(x => x.NumOfHealed, new { @class = "form-control" })
+                    </div>
+
+                    <div class="input-group mb-3" style="margin-left: 38%;">
+                        <label class="col-2 col-form-label" id="NumOfIntensiveCare">Ağır Hasta Sayısı</label>
+                        @Html.DisplayFor(x => x.NumOfIntensiveCare, new { @class = "form-control" })
+                    </div>
+
+                    <div class="input-group">
+                        <input type="submit" value="Sil" class="btn btn-danger btn-lg" style="margin-left: 53%; margin-bottom: 30px; margin-top: 5px;"/>
+                    </div>
+
+                    <div class="input-group" style="margin-left: 45%;">
+                        @if (ViewBag.Result != null)
+                        {
+                            <div class="alert alert-@ViewBag.Status" role="alert">
+                                @ViewBag.Result
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</body>
+</html>
